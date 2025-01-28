@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .display
+        {
+            background-color: rgb(255, 255, 255); 
+            margin: 10%;
+            border-radius: 10px;
+            width: 230px;
+            height: 40px;
+            justify-content: center;
+            text-align: end;
+        }
+        .calculator
+        {
+            background-color: rgb(191, 194, 31);
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid rgb(2, 2, 2);
+            border-radius: 20px;
+            margin-left: 350px;
+            width: 290px;
+            height: 450px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          }
+          #one
+        {
+            background-color: rgb(84, 140, 223);
+            width: 20px;
+            height: 20px;
+            margin: 3px;
+            border-radius: 10px;
+            text-align: center;
+            align-content: center;
+            padding: 1px;
+            border: 3px solid black; height: 40px; width: 50px;
+           
+        }
+      #two
+      {
+        background-color: rgb(252, 252, 252); 
+        width: 20px;
+        height: 20px;
+        border: 3px solid black; height: 40px; width: 50px;
+        align-content: center;
+        border-radius: 10px;
+        padding: 1px;
+        margin: 3px;
+      }
+        
+    </style>
+</head>
+<body>
+    <div class="calculator">
+      <h2><u>CALCULATOR</u>
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+          <button id="one" onclick="clearDisplay()" class="clear">AC</button>
+          <button id="one" onclick="Display('/')" class="clear">/</button>
+          <button id="one" onclick="Display('%')">%</button>
+          <button id="one" onclick="Display('÷')">÷</button>
+          <button id="two" onclick="Display('7')">7</button>
+          <button id="two" onclick="Display('8')">8</button>
+          <button id="two" onclick="Display('9')">9</button>
+          <button id="one" onclick="Display('x')">x</button>
+          <button id="two" onclick="Display('4')">4</button>
+          <button id="two" onclick="Display('5')">5</button>
+          <button id="two" onclick="Display('6')">6</button>
+          <button id="one" onclick="Display('-')">-</button>
+          <button id="two" onclick="Display('1')">1</button>
+          <button id="two" onclick="Display('2')">2</button>
+          <button id="two" onclick="Display('3')">3</button>
+          <button id="one" onclick="Display('+')" class="operator">+</button>
+          <button id="two" onclick="Display('00')">00</button>
+          <button id="two" onclick="Display('0')">0</button>
+          <button id="one" onclick="Display('.')">.</button>
+          <button id="one" onclick="calculate()" class="equal">=</button>
+          
+
+
+          
+    
+        </div>
+      </div>
+
+      <script>
+        const display = document.getElementById('display');
+    
+        function Display(value) {
+          display.value += value;
+        }
+    
+        function clearDisplay() {
+          display.value = '';
+        }
+    
+        function calculate() {
+          try {
+            display.value = eval(display.value);
+          } catch (error) {
+            display.value = 'Error';
+          }
+        }
+      </script>
+    </body>
+    </html>
+</body>
+</html>
